@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peak Performance Protocol - Elite Cognitive Optimization</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+            background: linear-gradient(135deg, #0a1f1f 0%, #1a3a3a 50%, #0d2626 100%);
+            color: #f5f5f0;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(10, 31, 31, 0.95);
+            padding: 25px 0;
+            border-bottom: 1px solid rgba(167, 199, 178, 0.2);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: 400;
+            letter-spacing: 3px;
+            color: #a7c7b2;
+            text-transform: uppercase;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: 
+                linear-gradient(rgba(10, 31, 31, 0.7), rgba(13, 38, 38, 0.8)),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%231a3a3a"/><path d="M0 400 Q 300 350 600 400 T 1200 400 L 1200 800 L 0 800 Z" fill="%230a1f1f" opacity="0.3"/><circle cx="200" cy="150" r="100" fill="%23a7c7b2" opacity="0.05"/><circle cx="900" cy="250" r="150" fill="%23a7c7b2" opacity="0.03"/></svg>') center/cover;
+            padding: 120px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 30% 40%, rgba(167, 199, 178, 0.08) 0%, transparent 60%),
+                radial-gradient(circle at 70% 60%, rgba(167, 199, 178, 0.05) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-accent {
+            color: #a7c7b2;
+            font-size: 16px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        h1 {
+            font-size: 68px;
+            font-weight: 300;
+            margin-bottom: 25px;
+            color: #f5f5f0;
+            line-height: 1.2;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 22px;
+            color: #d4e3d9;
+            margin-bottom: 50px;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #a7c7b2 0%, #8db39e 100%);
+            color: #0a1f1f;
+            padding: 20px 55px;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            display: inline-block;
+            text-decoration: none;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(167, 199, 178, 0.3);
+            background: linear-gradient(135deg, #b8d4c3 0%, #9ec4af 100%);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 100px 20px;
+            background: rgba(13, 38, 38, 0.6);
+            backdrop-filter: blur(20px);
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #f5f5f0;
+            font-weight: 300;
+            letter-spacing: -1px;
+        }
+
+        .features-subtitle {
+            text-align: center;
+            color: #a7c7b2;
+            font-size: 18px;
+            margin-bottom: 70px;
+            font-weight: 300;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, rgba(26, 58, 58, 0.6) 0%, rgba(13, 38, 38, 0.4) 100%);
+            padding: 50px 40px;
+            border-radius: 3px;
+            border: 1px solid rgba(167, 199, 178, 0.15);
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(167, 199, 178, 0.4);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+
+        .feature-card h3 {
+            font-size: 26px;
+            margin-bottom: 18px;
+            color: #a7c7b2;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .feature-card p {
+            color: #d4e3d9;
+            font-size: 17px;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, rgba(10, 31, 31, 0.9) 0%, rgba(13, 38, 38, 0.9) 100%);
+        }
+
+        .pricing h2 {
+            text-align: center;
+            font-size: 48px;
+            margin-bottom: 70px;
+            font-weight: 300;
+            letter-spacing: -1px;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background: linear-gradient(135deg, rgba(26, 58, 58, 0.5) 0%, rgba(13, 38, 38, 0.3) 100%);
+            padding: 60px 45px;
+            border-radius: 3px;
+            border: 1px solid rgba(167, 199, 178, 0.2);
+            text-align: center;
+            position: relative;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(15px);
+        }
+
+        .pricing-card:hover {
+            transform: scale(1.03);
+            border-color: rgba(167, 199, 178, 0.5);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .pricing-card.featured {
+            border-color: rgba(167, 199, 178, 0.5);
+            background: linear-gradient(135deg, rgba(26, 58, 58, 0.7) 0%, rgba(13, 38, 38, 0.5) 100%);
+        }
+
+        .badge {
+            position: absolute;
+            top: -15px;
+            right: 30px;
+            background: #a7c7b2;
+            color: #0a1f1f;
+            padding: 8px 20px;
+            border-radius: 2px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .pricing-card h3 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: #a7c7b2;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .price {
+            font-size: 56px;
+            font-weight: 300;
+            margin: 25px 0;
+            letter-spacing: -2px;
+        }
+
+        .price-note {
+            color: #8db39e;
+            font-size: 15px;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 40px 0;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(167, 199, 178, 0.1);
+            color: #d4e3d9;
+            font-size: 16px;
+            font-weight: 300;
+        }
+
+        .pricing-features li::before {
+            content: "✓";
+            color: #a7c7b2;
+            font-weight: 400;
+            margin-right: 12px;
+            font-size: 18px;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(10, 31, 31, 0.95);
+            padding: 50px 20px;
+            text-align: center;
+            border-top: 1px solid rgba(167, 199, 178, 0.2);
+            color: #8db39e;
+        }
+
+        footer p {
+            font-weight: 300;
+        }
+
+        .disclaimer {
+            margin-top: 25px;
+            font-size: 13px;
+            color: #8db39e;
+            line-height: 1.8;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 42px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Peak Performance</div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-accent">Elite Cognitive Optimization</div>
+            <h1>Master Your Mind,<br>Elevate Your Life</h1>
+            <p>A curated synthesis of cutting-edge neuroscience and ancestral wisdom for the modern high-performer. Optimize cognition, energy, and clarity—effortlessly.</p>
+            <button class="cta-button" onclick="scrollToPricing()">Begin Your Protocol</button>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2>The Science of Elite Performance</h2>
+            <p class="features-subtitle">Compiled from leading research institutions worldwide</p>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3>Neural Optimization</h3>
+                    <p>Evidence-based protocols for enhanced cognitive function, memory consolidation, and neuroplasticity from Stanford, MIT, and leading neuroscience centers.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌿</div>
+                    <h3>Biological Harmony</h3>
+                    <p>Align your biochemistry with circadian rhythms, optimize mitochondrial function, and restore natural energy patterns without stimulants.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💎</div>
+                    <h3>Mental Clarity</h3>
+                    <p>Eliminate cognitive fog through targeted nutritional strategies, inflammation reduction, and neurotransmitter optimization.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Sustained Energy</h3>
+                    <p>Master metabolic flexibility and cellular energy production for consistent, crash-free performance throughout your day.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Quantified Self</h3>
+                    <p>Track the biomarkers that matter. Understand your data and make informed decisions about your cognitive health.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Implementation Systems</h3>
+                    <p>Simple, elegant protocols that integrate seamlessly into a sophisticated lifestyle. No extremes, just results.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2>Choose Your Path</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Foundation</h3>
+                    <div class="price">$47</div>
+                    <p class="price-note">Single investment, lifetime access</p>
+                    <ul class="pricing-features">
+                        <li>21-Day Cognitive Protocol (PDF)</li>
+                        <li>Daily Optimization Checklist</li>
+                        <li>Neuroscience-Based Supplement Guide</li>
+                        <li>Focus Enhancement Techniques</li>
+                        <li>Energy Optimization Blueprint</li>
+                        <li>Instant digital delivery</li>
+                        <li><strong>FREE BONUS:</strong> Morning Optimization Ritual ($27 value)</li>
+                    </ul>
+                    <button class="cta-button" onclick="checkout('foundation')">Access Foundation</button>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="badge">Most Popular</div>
+                    <h3>Mastery</h3>
+                    <div class="price">$97</div>
+                    <p class="price-note">Single investment, lifetime access</p>
+                    <ul class="pricing-features">
+                        <li>Everything in Foundation</li>
+                        <li>Advanced Protocol Library (5 specialized guides)</li>
+                        <li>Performance Dashboard Templates</li>
+                        <li>Biomarker Interpretation Guide</li>
+                        <li>Sleep Architecture Optimization</li>
+                        <li>Stress Resilience Protocol</li>
+                        <li>Quarterly Research Updates</li>
+                        <li>Private member community</li>
+                        <li><strong>FREE BONUS:</strong> Morning Optimization Ritual ($27 value)</li>
+                    </ul>
+                    <button class="cta-button" onclick="checkout('mastery')">Access Mastery</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Peak Performance Protocol. All rights reserved.</p>
+            <p class="disclaimer">These materials represent a curated synthesis of publicly available research and are provided for educational purposes only. This content is not medical advice. Always consult qualified healthcare professionals before making changes to your health regimen. Individual results may vary. All protocols are compiled from peer-reviewed research and leading academic institutions.</p>
+        </div>
+    </footer>
+
+    <script>
+        // ============================================
+        // STRIPE PAYMENT LINKS - UPDATE THESE!
+        // ============================================
+        
+        const STRIPE_LINKS = {
+            foundation: 'YOUR_FOUNDATION_STRIPE_LINK_HERE',  // Replace with your Stripe Payment Link
+            mastery: 'YOUR_MASTERY_STRIPE_LINK_HERE'         // Replace with your Stripe Payment Link
+        };
+
+        // ============================================
+        // CHECKOUT FUNCTION - NOTHING TO CHANGE HERE
+        // ============================================
+        
+        function checkout(productType) {
+            const stripeLink = STRIPE_LINKS[productType];
+            
+            // Check if Stripe link has been added
+            if (stripeLink.includes('YOUR_') || stripeLink.includes('_HERE')) {
+                alert('Payment processing not yet configured. Please check back soon!');
+                console.log('Add your Stripe Payment Links at the top of the script section');
+                return;
+            }
+            
+            // Redirect to Stripe checkout
+            window.location.href = stripeLink;
+        }
+
+        function scrollToPricing() {
+            document.getElementById('pricing').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
